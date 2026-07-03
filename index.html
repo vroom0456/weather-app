@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skyline — Weather</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">◐</span>
+      <span class="brand-name">Skyline</span>
+    </div>
+    <button class="unit-toggle" id="unitToggle">°C</button>
+  </header>
+
+  <form class="search-bar" id="searchForm">
+    <input type="text" id="cityInput" placeholder="Search a city…" autocomplete="off">
+    <button type="submit" id="searchBtn" aria-label="Search">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    </button>
+    <button type="button" id="locBtn" aria-label="Use my location">
+      <svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M12 8a4 4 0 100 8 4 4 0 000-8z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    </button>
+  </form>
+
+  <div id="messagePanel" class="message-panel"></div>
+
+  <main id="weatherCard" class="weather-card hidden">
+    <div class="loc-line">
+      <h1 id="cityName">—</h1>
+      <span id="dateLine"></span>
+    </div>
+
+    <div class="primary-readout">
+      <div class="icon-wrap" id="weatherIcon"></div>
+      <div class="temp-block">
+        <span id="temp" class="temp">—</span>
+        <span id="condition" class="condition">—</span>
+      </div>
+    </div>
+
+    <p class="feels-like">Feels like <span id="feelsLike">—</span></p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Humidity</span>
+        <span class="stat-value" id="humidity">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Wind</span>
+        <span class="stat-value" id="wind">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Pressure</span>
+        <span class="stat-value" id="pressure">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Visibility</span>
+        <span class="stat-value" id="visibility">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Sunrise</span>
+        <span class="stat-value" id="sunrise">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Sunset</span>
+        <span class="stat-value" id="sunset">—</span>
+      </div>
+    </div>
+  </main>
+
+  <section id="forecastRow" class="forecast-row hidden">
+    <h2>5-Day Forecast</h2>
+    <div class="forecast-track" id="forecastTrack"></div>
+  </section>
+
+  <section class="history-row" id="historyRow">
+    <h2>Recent Searches</h2>
+    <div class="history-chips" id="historyChips"></div>
+  </section>
+
+  <div class="key-banner" id="keyBanner">
+    <p>This app needs a free OpenWeatherMap API key to fetch live data. Paste yours below — it's saved only in your browser.</p>
+    <div class="key-input-row">
+      <input type="text" id="apiKeyInput" placeholder="Paste your OpenWeatherMap API key">
+      <button id="saveKeyBtn">Save</button>
+    </div>
+    <a href="https://home.openweathermap.org/users/sign_up" target="_blank" rel="noopener">Get a free key →</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
